@@ -42,9 +42,9 @@ DRIVY = (function namespace () {
    */
   var getCar = function getCar (id) {
     var cars = displayCar();
-    var index = 0;
+    var index;
 
-    for (var i = 0; i <= cars.lentgh; i++) {
+    for (var i = 0; i <= 2; i++) {
       if (id == cars[i].id) {
         index = i;
       };

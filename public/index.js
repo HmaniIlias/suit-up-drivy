@@ -33,10 +33,39 @@ var DRIVY = DRIVY || {};
 }
 
   //Va calculer Et afficher les prix
-  jQuery(document).ready(function($) {  //Chercher jquery on click pour des boutons ayant le même id
-      $(document).on('click','#go',function(){
-        var index = $("button").attr( "data-selected-card" );
-        alert(index);
+  jQuery(document).ready(function($) {  //Chercher jquery on click pour des boutons ayant le même 
+      $(document).on('click','#p306',function(){
+        var index = 'p306';
+        var car = DRIVY.getCar(index);
+        var begin = document.querySelector('#begin').value;
+        var end = document.querySelector('#end').value;
+        var distance = document.querySelector('#distance').value;
+        var option = document.querySelector('#option').checked;
+
+        var actors = DRIVY.payActors(car, begin, end, distance, option);
+
+        render(actors);
+
+        return false;
+
+      });
+      $(document).on('click','#rr-sport',function(){
+        var index = 'rr-sport';
+        var car = DRIVY.getCar(index);
+        var begin = document.querySelector('#begin').value;
+        var end = document.querySelector('#end').value;
+        var distance = document.querySelector('#distance').value;
+        var option = document.querySelector('#option').checked;
+
+        var actors = DRIVY.payActors(car, begin, end, distance, option);
+
+        render(actors);
+
+        return false;
+
+      });
+      $(document).on('click','#p-boxster',function(){
+        var index = 'p-boxster';
         var car = DRIVY.getCar(index);
         var begin = document.querySelector('#begin').value;
         var end = document.querySelector('#end').value;
