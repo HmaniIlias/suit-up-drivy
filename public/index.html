@@ -2,20 +2,59 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/style/style.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
+
+    <div id="rental" class="center">
+      <label> Date de début </label>
+      <input id='begin'class="" type="date" placeholder="Rental begin date"/>
+      <label> Date de fin </label>
+      <input id='end' class="" type="date" placeholder="Rental end date"/>
+      <label> Distance </label>
+      <input id='distance' class="distance" type="number" placeholder="Distance en km.."/>
+      <input id='option' class="option" type="checkbox" placeholder="Deductible option"/>
     </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
+
+    <div id= "cars" class="mdl-grid center"> </div>
+    <script id="templateCars" type="x-tmpl-mustache">
+      {{#cars}}
+      <div class="mdl-card mdl-cell mdl-cell--3-col mdl-shdow--2dp cards">
+
+          <div class="mdl-card_title">
+            <h2 class="mdl-card_title-text">{{name}}</h2>
+          </div>
+
+          <div>
+            <img class="card-img" src={{img}} alt="">
+          </div>
+
+          <div class="mdl-card_supporting-text">
+            <div class="mdl-grid text-center padding-none">
+              <div class="mdl-cell mdl-cell--6-col">
+                <span class="price-tag">{{pricePerDay}} €</span>
+                <span>Price per day</span>
+              </div>
+              <div class="mdl-cell mdl-cell--6col">
+                <span class="price-tag">{{pricePerKm}} €</span>
+                <span>Price per km</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mdl-card_actions mdl-card--border">
+            <button id="go" data-selected-card={{id}} class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent button-centrer" >
+              LETS GO
+            </button>
+          </div>
+        </div>
+      {{/cars}}
+    </script>
+
     <div id="actors"></div>
     <script id="template" type="x-tmpl-mustache">
       {{#actors}}
@@ -26,6 +65,7 @@
         </div>
       {{/actors}}
     </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
