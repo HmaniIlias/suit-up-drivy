@@ -1,0 +1,72 @@
+html, body {
+  background: #f1f1f1;
+  font-family: 'Merriweather', sans-serif;
+  padding: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+form{
+  margin: 0 auto;
+  width: 500px;
+  padding-top: 40px;
+  color: white;
+  position: relative;  
+}
+
+/*label, input, textarea{
+  display: block; 
+}*/
+
+img{
+  margin-left: 30px;
+  border-radius: 20px;
+}
+
+input, textarea{
+  width: 180px; 
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 7px;
+  font-family: 'Sniglet', cursive;
+  font-size: 14px;
+  color: #676767;
+  border: solid 2px #ff4081;  
+}
+
+input:focus, textarea:focus{
+  border: solid 2px #77bde0;  
+}
+
+.cards{
+    background: #f1f1f1;
+    border: 1px solid #ff4081;
+    border-radius: 20px;
+}
+
+.center{
+  margin-left: 200px;
+}
+
+.center-form{
+  margin-left: 110px;
+}
+
+.label-form{
+  padding-left: 50px;
+}
+
+.input-form{
+  margin-left: 40px;
+}
+
+.chekBox{
+  width: 40px; 
+}
+
+.button-centrer{
+    margin-left: 90px;
+    margin-bottom: 15px;
+}

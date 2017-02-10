@@ -10,15 +10,20 @@
   </head>
   <body>
 
-    <div id="rental" class="center">
-      <label> Date de début </label>
-      <input id='begin'class="" type="date" placeholder="Rental begin date"/>
-      <label> Date de fin </label>
-      <input id='end' class="" type="date" placeholder="Rental end date"/>
-      <label> Distance </label>
-      <input id='distance' class="distance" type="number" placeholder="Distance en km.."/>
-      <input id='option' class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
+    <div id="rental" class="center ">
+      <div class="center-form">
+        <label> Date de début: </label>
+        <input id='begin'class="" type="date" placeholder="Rental begin date"/>
+        <label class="label-form"> Date de fin: </label>
+        <input id='end' class="" type="date" placeholder="Rental end date"/>
+      </div><br>
+      <div class="center-form">
+        <label> Distance: </label>
+        <input id='distance' class="distance input-form" type="number" placeholder="Distance en km.."/>
+        <label class="label-form"> Discount:  </label>
+        <input id='option' class="option chekBox" type="checkbox" placeholder="Deductible option"/> Yes
+      </div>
+    </div><br><br>
 
     <div id= "cars" class="mdl-grid center"> </div>
     <script id="templateCars" type="x-tmpl-mustache">
