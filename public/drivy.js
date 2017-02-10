@@ -14,19 +14,19 @@ DRIVY = (function namespace () {
    var displayCar = function displayCar (){
       var car = [{
       'id': 'p306',
-      'name': 'peugeot 306',
+      'name': 'Peugeot 306',
       'img': '../public/images/peugeot-306.jpg',
       'pricePerDay': 20,
       'pricePerKm': 0.10
     }, {
       'id': 'rr-sport',
-      'name': 'renault sport',
+      'name': 'Renault r.s',
       'img': '../public/images/r-sport.jpg',
       'pricePerDay': 60,
       'pricePerKm': 0.30
     }, {
       'id': 'p-boxster',
-      'name': 'peugeot box',
+      'name': 'Peugeot box',
       'img': '../public/images/p-boxter.jpg',
       'pricePerDay': 100,
       'pricePerKm': 0.45
@@ -149,6 +149,7 @@ DRIVY = (function namespace () {
 
     var actors = [{
       'who': 'driver',
+      'isDriver': true,
       'type': 'debit',
       'amount': price + deductibleOption
     }, {

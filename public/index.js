@@ -33,7 +33,7 @@ var DRIVY = DRIVY || {};
 }
 
   //Va calculer Et afficher les prix
-  jQuery(document).ready(function($) {
+  jQuery(document).ready(function($) {  //Chercher jquery on click pour des boutons ayant le même id
       $(document).on('click','#go',function(){
         var index = $("button").attr( "data-selected-card" );
         alert(index);

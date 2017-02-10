@@ -31,7 +31,7 @@
       <div class="mdl-card mdl-cell mdl-cell--3-col mdl-shdow--2dp cards">
 
           <div class="mdl-card_title">
-            <h2 class="mdl-card_title-text">{{name}}</h2>
+            <h2 class="mdl-card_title-text card-title">{{name}}</h2>
           </div>
 
           <div>
@@ -41,12 +41,12 @@
           <div class="mdl-card_supporting-text">
             <div class="mdl-grid text-center padding-none">
               <div class="mdl-cell mdl-cell--6-col">
-                <span class="price-tag">{{pricePerDay}} €</span>
-                <span>Price per day</span>
+                <span class="span">Prix par jour:</span>
+                <span class="price-tag span-prix">{{pricePerDay}} €</span>
               </div>
-              <div class="mdl-cell mdl-cell--6col">
-                <span class="price-tag">{{pricePerKm}} €</span>
-                <span>Price per km</span>
+              <div class="mdl-cell mdl-cell--6-col">
+                <span class="span">Prix par km:</span>
+                <span class="price-tag span-prix">{{pricePerKm}} €</span>
               </div>
             </div>
           </div>
@@ -59,16 +59,28 @@
         </div>
       {{/cars}}
     </script>
+    <br><br>
 
     <div id="actors"></div>
     <script id="template" type="x-tmpl-mustache">
       {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
-        </div>
+        {{#isDriver}}
+          <div class="[ price-option price-option--mid ] pay-box">
+            <div class="price-option__detail">
+              <span class="price-option__cost">{{amount}} €</span>
+              <span class="price-option__type">Prix TTC&ast;</span>
+            </div>
+            <a href="#" class="price-option__purchase">Buy</a>
+          </div>
+        {{/isDriver}}
+        {{^isDriver}}
+        <div class="actor actors-div">
+            <span> &ast;{{who}}: </span>
+            <span>{{amount}} €</span>
+          </div>
+        {{/isDriver}}
       {{/actors}}
+
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
