@@ -6,16 +6,54 @@ var DRIVY = DRIVY || {};
 DRIVY = (function namespace () {
   var MS_PER_DAY = 1000 * 60 * 60 * 24;
 
+    /**
+   * Display Cars
+   *
+   * @return {Object}
+   */
+   var displayCar = function displayCar (){
+      var car = [{
+      'id': 'p306',
+      'name': 'peugeot 306',
+      'img': '../public/images/peugeot-306.jpg',
+      'pricePerDay': 20,
+      'pricePerKm': 0.10
+    }, {
+      'id': 'rr-sport',
+      'name': 'renault sport',
+      'img': '../public/images/r-sport.jpg',
+      'pricePerDay': 60,
+      'pricePerKm': 0.30
+    }, {
+      'id': 'p-boxster',
+      'name': 'peugeot box',
+      'img': '../public/images/p-boxter.jpg',
+      'pricePerDay': 100,
+      'pricePerKm': 0.45
+    }];
+
+    return car;
+   };
+
   /**
    * Get car information
    *
    * @return {Object}
    */
-  var getCar = function getCar () {
+  var getCar = function getCar (id) {
+    var cars = displayCar();
+    var index = 0;
+
+    for (var i = 0; i <= cars.lentgh; i++) {
+      if (id == cars[i].id) {
+        index = i;
+      };
+    };
+
     return {
-      'model': document.querySelector('#car .model').value,
-      'pricePerDay': document.querySelector('#car .price-by-day').value,
-      'pricePerKm': document.querySelector('#car .price-by-km').value
+      'model': cars[index].name,
+      'pricePerDay': cars[index].pricePerDay,
+      'pricePerKm': cars[index].pricePerKm
     };
   };
 
@@ -136,6 +174,7 @@ DRIVY = (function namespace () {
 
   return {
     'getCar': getCar,
-    'payActors': payActors
+    'payActors': payActors,
+    'displayCar': displayCar
   };
 }());
